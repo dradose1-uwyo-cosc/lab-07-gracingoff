@@ -1,8 +1,8 @@
-# Your Name Here
+# Gracin Goff
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# 10/29/24
+# Lab 07
+# Lab Section: 10
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -17,7 +17,29 @@
     # If a user did not enter a number output a statement saying so
 # You will continue to prompt the user until a proper integer value is entered
 
+
+up_bound = input("Give me a number for an upper bound to return a factorial")
+
+
+while True:
+    if up_bound.isnumeric():
+        break
+    else:
+        print("Please give a valid response")
+        up_bound = input("Give me a number for an upper bound to return a factorial")
+        if up_bound.isnumeric():
+            break
+
+up_bound = int(up_bound)
 factorial = 1
+
+while True:
+    if up_bound > 0:
+        factorial = factorial * up_bound
+        up_bound -= 1
+    else:
+        break
+
 
 print(f"The result of the factorial based on the given bound is {factorial}")
 
@@ -37,7 +59,21 @@ print("*"*75)
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
 
-num_sum = 0 
+
+num_sum = 0
+
+while True:
+    number = input("Give me an integer to produce a sum")
+    if number.upper() == "EXIT":
+        break 
+    else:
+        number = int(number)
+        if number > 0:
+            num_sum = num_sum + number 
+        else:
+            num_sum = num_sum + number
+    
+
 
 print(f"Your final sum is {num_sum}")
 
@@ -59,4 +95,71 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
-        
+while True:
+    calc = input("Give me a calculation to solve")
+
+    calc = calc.strip()
+
+    ops=[]
+
+    if "+" in calc:
+        ops = calc.split("+")
+        left = ops[0]
+        right = ops[-1]
+        if left.isnumeric() and right.isnumeric():
+            left = int(left)
+            right = int(right)
+            print({left}+ {right})
+        else:
+            break
+    
+
+    if "-" in calc:
+        ops = calc.split("-")
+        left = ops[0]
+        right = ops[-1]
+        if left.isnumeric() and right.isnumeric():
+            left = int(left)
+            right = int(right)
+            print(left - right)
+        else:
+            break 
+
+
+    if "/" in calc:
+        ops = calc.split("/")
+        left = ops[0]
+        right = ops[-1]
+        if left.isnumeric() and right.isnumeric():
+            left = int(left)
+            right = int(right)
+            print(left / right)
+        else:
+            break 
+
+
+    if "*" in calc:
+        ops = calc.split("*")
+        left = ops[0]
+        right = ops[-1]
+        if left.isnumeric() and right.isnumeric():
+            left = int(left)
+            right = int(right)
+            print(left * right)
+        else:
+            break
+
+    if "%" in calc:
+        ops = calc.split("%")
+        left = ops[0]
+        right = ops[-1]
+        if left.isnumeric() and right.isnumeric():
+            left = int(left)
+            right = int(right)
+            print(left % right)
+        else:
+            break
+
+
+
+
