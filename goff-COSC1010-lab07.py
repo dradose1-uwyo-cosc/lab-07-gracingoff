@@ -95,73 +95,42 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
+
+
 while True:
-    calc = input("Give me a calculation to solve")
-
-    calc = calc.strip()
-
-    ops=[]
-if calc.upper() == "EXIT":
-    break 
-else:
-
-    if "+" in calc:
-        ops = calc.split("+")
-        left = ops[0]
-        right = ops[-1]
-        if left.isnumeric() and right.isnumeric():
-            left = int(left)
-            right = int(right)
-            print({left} + {right})
-        else:
-            break
-    
-
-    if "-" in calc:
-        ops = calc.split("-")
-        left = ops[0]
-        right = ops[-1]
-        if left.isnumeric() and right.isnumeric():
-            left = int(left)
-            right = int(right)
-            print(left - right)
-        else:
-            break 
 
 
-    if "/" in calc:
-        ops = calc.split("/")
-        left = ops[0]
-        right = ops[-1]
-        if left.isnumeric() and right.isnumeric():
-            left = int(left)
-            right = int(right)
-            print(left / right)
-        else:
-            break 
+    expression = input("Give me an expression to calculate")
+
+    if expression.upper() == "EXIT":
+        break
+
+    else:
+        
+        expression = expression.strip()
+
+        ops = []
+
+        ops = expression.split()
+
+        print(ops)
+
+        num1 = int(ops[0])
+        num2 = int(ops[2])
+        operator = ops[1]
+
+        if operator == "+":
+            print(num1 + num2)
+        elif operator == "-":
+            print(num1 - num2)
+        elif operator == "*":
+            print(num1 * num2)
+        elif operator == "/":
+            print(num1 / num2)
+        elif operator == "%":
+            print(num1 % num2)
 
 
-    if "*" in calc:
-        ops = calc.split("*")
-        left = ops[0]
-        right = ops[-1]
-        if left.isnumeric() and right.isnumeric():
-            left = int(left)
-            right = int(right)
-            print(left * right)
-        else:
-            break
-
-    if "%" in calc:
-        ops = calc.split("%")
-        left = ops[0]
-        right = ops[-1]
-        if left.isnumeric() and right.isnumeric():
-            left = int(left)
-            right = int(right)
-            print(left % right)
-        else:
-            break
 
 
 
