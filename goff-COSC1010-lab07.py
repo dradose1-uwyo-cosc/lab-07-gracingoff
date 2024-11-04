@@ -101,6 +101,9 @@ while True:
     calc = calc.strip()
 
     ops=[]
+if calc.upper() == "EXIT":
+    break 
+else:
 
     if "+" in calc:
         ops = calc.split("+")
@@ -109,7 +112,7 @@ while True:
         if left.isnumeric() and right.isnumeric():
             left = int(left)
             right = int(right)
-            print({left}+ {right})
+            print({left} + {right})
         else:
             break
     
